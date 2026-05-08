@@ -63,6 +63,7 @@ fun ThunderBayGalleryApp() {
         val photos = remember {
             mutableStateListOf(
 
+
                 GalleryPhoto(1, "Food", R.drawable.tb1),
                 GalleryPhoto(2, "City", R.drawable.tb2),
                 GalleryPhoto(3, "City", R.drawable.tb3),
@@ -73,7 +74,13 @@ fun ThunderBayGalleryApp() {
                 GalleryPhoto(8, "Campus", R.drawable.tb8),
                 GalleryPhoto(9, "Food", R.drawable.tb9),
                 GalleryPhoto(10, "City", R.drawable.tb10),
-                GalleryPhoto(11, "Campus", R.drawable.tb11)
+                GalleryPhoto(11, "Campus", R.drawable.tb11),
+                GalleryPhoto(12, "Nature", R.drawable.tb6),
+                GalleryPhoto(13, "Lake", R.drawable.tb7),
+                GalleryPhoto(14, "Food", R.drawable.tb8),
+                GalleryPhoto(15, "Campus", R.drawable.tb9),
+                GalleryPhoto(16, "Food", R.drawable.tb10),
+                GalleryPhoto(17, "Campus", R.drawable.tb11)
 
             )
         }
