@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.dp
 
 data class GalleryPhoto(
     val id: Int,
-    val album: String,
+    val album: String?,
     val image: Int,
     var isFavorite: Boolean = false
 )
@@ -994,7 +994,10 @@ fun AlbumPhotoScreen(
                 .padding(padding)
                 .padding(12.dp)
         ) {
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
                 GridDropdownButton(
                     columnCount = columnCount,
                     onColumnChange = {
@@ -1003,18 +1006,26 @@ fun AlbumPhotoScreen(
                     }
                 )
 
-                ColumnDropdown(
-                    columnCount = columnCount,
-                    onColumnChange = { columnCount = it }
-                )
-
-                Button(onClick = { isGridView = false }) {
+                Button(
+                    onClick = {
+                        isGridView = false
+                    }
+                ) {
                     Icon(Icons.Default.List, contentDescription = null)
                     Text(" List")
                 }
 
-                Button(onClick = { showFavoritesOnly = !showFavoritesOnly }) {
-                    Text(if (showFavoritesOnly) "All" else "Favorites")
+                Button(
+                    onClick = {
+                        showFavoritesOnly = !showFavoritesOnly
+                    }
+                ) {
+                    Text(
+                        if (showFavoritesOnly)
+                            "All"
+                        else
+                            "Fav"
+                    )
                 }
             }
 
